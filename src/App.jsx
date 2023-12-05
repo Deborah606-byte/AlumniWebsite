@@ -1,12 +1,21 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ROUTES } from "./pages/index";
+import AboutUs from "./pages/about-us";
+import Auth from "./pages/auth";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-    <h1 className='text-xl font-semibold text-red-800'>Hello, this is AlumniNexus</h1>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path={ROUTES.base} element={<AboutUs />} />
+        <Route path={ROUTES.auth} element={<Auth />}>
+          <Route path={ROUTES.login} element={<AboutUs />} />
+          <Route path={ROUTES.signup} element={<AboutUs />} />
+        </Route>
+        <Route path={ROUTES.notFound} element={<h1>Not Found</h1>} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
