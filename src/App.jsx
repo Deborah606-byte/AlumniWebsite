@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ROUTES } from "./pages/index";
-import AboutUs from "./pages/about-us";
 import Auth from "./pages/auth";
+import AboutUs from "./pages/about-us";
+import NotFound from "./pages/not-found";
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
           <Route path={ROUTES.login} element={<AboutUs />} />
           <Route path={ROUTES.signup} element={<AboutUs />} />
         </Route>
-        <Route path={ROUTES.notFound} element={<h1>Not Found</h1>} />
+        <Route path={ROUTES.notFound} element={<NotFound />} />
       </Routes>
     </Router>
   );
