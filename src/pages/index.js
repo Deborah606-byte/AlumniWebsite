@@ -3,5 +3,13 @@ export const ROUTES = {
   auth: "/auth",
   login: "login",
   signup: "signup",
+  home: "/home",
+  dashboard: "/dashboard",
+  events: "/events",
+  eventDetails: "/event-details",
+  opportunity: "/oportunity",
+  stories: "/stories",
+  rsvp: '/rsvp',
+  jobDetails: '/job-details',
   notFound: "*",
 };
