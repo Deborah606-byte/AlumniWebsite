@@ -20,7 +20,6 @@ export default function SignUp() {
             resilient network of talent and ambition.
           </p>
 
-          {/* <!-- <img className="rounded-lg w-full mx-auto" src="../images/friends-toasting-with-glasses-wine-eating-barbeque-during-outdoor-party.jpg" alt=""> --> */}
           <p className="text-secondary-200 leading-mb italic text-center font-light mb-6">
             Today, this platform stands as a testament to our unwavering
             commitment to the values and spirit of AlumniNexus.
@@ -181,8 +180,8 @@ export default function SignUp() {
         </div>
       </div>
 
-      <script src="../services/signup.js"></script>
-      <script src="../js//password.js"></script>
+      {/* <script src="../services/signup.js"></script>
+      <script src="../js//password.js"></script> */}
     </div>
   );
 }
