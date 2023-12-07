@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ROUTES } from "./pages/index";
+import { ROUTES } from "./data/constants/routes";
 import Auth from "./pages/auth";
 import AboutUs from "./pages/about-us";
 import NotFound from "./pages/not-found";

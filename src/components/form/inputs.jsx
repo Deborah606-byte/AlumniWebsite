@@ -13,6 +13,7 @@ export function TextInput(props) {
         name={name}
         value={value}
         onChange={onChange}
+        required
       />
     </div>
   );
