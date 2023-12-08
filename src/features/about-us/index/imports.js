@@ -20,6 +20,8 @@ import logoElectron from "../../../data/images/ion_logo-electron.png";
 import girlImage from "../../../data/images/girl 1.png";
 import blairImage from "../../../data/images/blair.png";
 
+import AppFooter from "../../../components/ui/app-footer"
+
 export {
     image1,
     meetImage,
@@ -42,4 +44,6 @@ export {
     logoElectron,
     girlImage,
     blairImage,
+    // 
+    AppFooter
 };
