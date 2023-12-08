@@ -9,7 +9,16 @@ import {
 } from "../index/imports";
 
 export default function SignUpComponent() {
-  const { username, firstName, lastName, email, group, phone } = {};
+  const {
+    username,
+    password,
+    firstName,
+    lastName,
+    address,
+    email,
+    group,
+    phone,
+  } = {};
   const handleInputChange = (e) => console.log(e);
 
   return (
