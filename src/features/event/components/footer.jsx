@@ -1,4 +1,4 @@
-import { AppFooter } from "../index/imports";
+import { AppFooter, logoElectron } from "../index/imports";
 
 export default function EventFooter() {
   return (
@@ -6,7 +6,7 @@ export default function EventFooter() {
       <div className="container mx-auto pt-36 pb-5 w-[80%]">
         <div className="grid lg:grid-cols-4 gap-10 mb-36">
           <div className="mt-12">
-            <img className="" src="../images/ion_logo-electron.png" alt="" />
+            <img className="" src={logoElectron} alt="" />
           </div>
           <div>
             <a href="#" className="font-extrabold">

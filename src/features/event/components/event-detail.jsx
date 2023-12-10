@@ -1,3 +1,13 @@
+import {
+  googleMeetImage,
+  homecomingImage,
+  blairImage,
+  andrewImage,
+  drewImage,
+  girlImage,
+  sa1,
+} from "../index/imports";
+
 export default function EventDetail() {
   return (
     <div className="container mx-auto py-16 w-[80%]">
@@ -12,7 +22,7 @@ export default function EventDetail() {
       </p>
 
       <div className="flex justify-start space-x-8 mb-4">
-        <img className="w-5 h-5" src="../images/logos_google-meet.png" alt="" />
+        <img className="w-5 h-5" src={googleMeetImage} alt="" />
         <p className="text-secondary-200 font-thin text-sm">
           Join with Google Meet
         </p>
@@ -20,7 +30,7 @@ export default function EventDetail() {
       </div>
 
       <img
-        src="../images/homecoming.jpg"
+        src={homecomingImage}
         alt="Event Banner"
         className="mb-4 w-full h-auto rounded-lg"
       />
@@ -93,31 +103,11 @@ export default function EventDetail() {
           300 People Invited
         </h3>
         <div className="flex space-x-4">
-          <img
-            className="rounded-full w-24 h-24"
-            src="../images/blair.png"
-            alt=""
-          />
-          <img
-            className="rounded-full w-24 h-24"
-            src="../images/andrew.png"
-            alt=""
-          />
-          <img
-            className="rounded-full w-24 h-24"
-            src="../images/drew.png"
-            alt=""
-          />
-          <img
-            className="rounded-full w-24 h-24"
-            src="../images/girl 1.png"
-            alt=""
-          />
-          <img
-            className="rounded-full w-24 h-24"
-            src="../images/sa1.png"
-            alt=""
-          />
+          <img className="rounded-full w-24 h-24" src={blairImage} alt="" />
+          <img className="rounded-full w-24 h-24" src={andrewImage} alt="" />
+          <img className="rounded-full w-24 h-24" src={drewImage} alt="" />
+          <img className="rounded-full w-24 h-24" src={girlImage} alt="" />
+          <img className="rounded-full w-24 h-24" src={sa1} alt="" />
           <div className="mt-8">
             <i className="fa-solid fa-plus text-secondary-300"></i>
             <i className="fa-solid fa-plus text-secondary-300"></i>

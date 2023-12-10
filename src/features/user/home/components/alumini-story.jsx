@@ -1,14 +1,11 @@
+import { sameshun, gallery } from "../../index/imports";
 export default function AluminiStory() {
   return (
     <>
       <div className="container mx-auto py-16 w-[80%]">
         <div className="grid lg:grid-cols-2 gap-10">
           <div className="relative">
-            <img
-              className="h-full w-[70%]"
-              src="../images/Sam Eshun.png"
-              alt="Story"
-            />
+            <img className="h-full w-[70%]" src={sameshun} alt="Story" />
             <p className="absolute top-[92%] text-secondary-200 text-3xl font-bold">
               Samuella Eshun
             </p>
@@ -43,7 +40,7 @@ export default function AluminiStory() {
 
       {/* <!-- gallery --> */}
       <div className="container mx-auto py-16 w-[80%]">
-        <img src="../images/gallery.png" alt="" />
+        <img src={gallery} alt="" />
       </div>
     </>
   );

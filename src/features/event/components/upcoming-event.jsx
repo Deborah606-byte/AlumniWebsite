@@ -1,3 +1,5 @@
+import { gathering } from "../index/imports";
+
 export default function UpcomingEvent() {
   return (
     <div className="bg-secondary-300/30">
@@ -7,7 +9,7 @@ export default function UpcomingEvent() {
             <div className="relative">
               <img
                 className="h-full w-full opacity-50"
-                src="../images/gathering.jpg"
+                src={gathering}
                 alt=""
               />
               <div className="time absolute top-1/2 transform -translate-y-1/2 left-20 text-center w-full">

@@ -1,3 +1,5 @@
+import { doctor } from "../../index/imports";
+
 export default function Header() {
   return (
     <header className="bg-secondary-100">
@@ -26,7 +28,7 @@ export default function Header() {
               <div className="relative inline-block text-secondary-200 cursor-pointer">
                 <img
                   className="rounded-full h-10 w-10 border-2 border-secondary-200"
-                  src="../images/doctor 2.png"
+                  src={doctor}
                   alt=""
                 />
                 <div className="profile-dropdown hidden absolute z-10 right-0 mt-2 w-48 bg-primary rounded-lg shadow-lg border border-secondary-300">

@@ -6,5 +6,5 @@ import EventComponent from "../features/event/containers/events";
 import EventDetailsComponent from "../features/event/containers/event-details";
 import DashboardComponent from "../features/user/dashboard/containers/dashboard";
 
-export { LoginComponent, SignUpComponent, AboutUsComponent, HomeComponent };
-export { EventComponent, EventDetailsComponent, DashboardComponent }
+export { LoginComponent, SignUpComponent, AboutUsComponent, HomeComponent, EventComponent, EventDetailsComponent, DashboardComponent };
+

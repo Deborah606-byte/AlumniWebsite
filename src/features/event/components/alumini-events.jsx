@@ -1,3 +1,5 @@
+import { carousel1, audienceImage, homecomingImage } from "../index/imports";
+
 export default function AluminiEvents() {
   return (
     <div className="container mx-auto py-16 w-[80%]">
@@ -11,14 +13,14 @@ export default function AluminiEvents() {
         </button>
         <label
           className="text-secondary-100 font-medium text-xl"
-          for="categorySelect"
+          htmlFor="categorySelect"
         >
           Select Category:
         </label>
         <select
           className="bg-primary text-secondary-200 border-2 border-secondary-200 rounded-full px-4 py-2"
           id="categorySelect"
-          onchange="searchEvents()"
+          onChange={() => console.log("searchEvents()")}
         >
           <option className="mb-2" value="all">
             All Events
@@ -44,7 +46,7 @@ export default function AluminiEvents() {
           <div className="aspect-w-4 aspect-h-3">
             <img
               className="object-cover"
-              src="../images/homecoming.jpg"
+              src={homecomingImage}
               alt="homecoming"
             />
           </div>
@@ -101,11 +103,7 @@ export default function AluminiEvents() {
           data-category="networking"
         >
           <div className="aspect-w-4 aspect-h-3">
-            <img
-              className="object-cover"
-              src="../images/carousel1.PNG"
-              alt="homecoming"
-            />
+            <img className="object-cover" src={carousel1} alt="homecoming" />
           </div>
           <div className="absolute top-1/3 left-0 bg-black/50 w-full text-center">
             <h4 className="text-secondary-100 font-medium text-xl mb-2">
@@ -162,7 +160,7 @@ export default function AluminiEvents() {
           <div className="aspect-w-4 aspect-h-3">
             <img
               className="object-cover"
-              src="../images/audience-seminar-applauding-young-black-woman-lectern_625516-3573.avif"
+              src={audienceImage}
               alt="professonal"
             />
           </div>
@@ -224,7 +222,7 @@ export default function AluminiEvents() {
           <div className="aspect-w-4 aspect-h-3">
             <img
               className="object-cover"
-              src="../images/homecoming.jpg"
+              src={homecomingImage}
               alt="homecoming"
             />
           </div>
@@ -281,11 +279,7 @@ export default function AluminiEvents() {
           data-category="professional"
         >
           <div className="aspect-w-4 aspect-h-3">
-            <img
-              className="object-cover"
-              src="../images/carousel1.PNG"
-              alt="homecoming"
-            />
+            <img className="object-cover" src={carousel1} alt="homecoming" />
           </div>
           <div className="absolute top-1/3 left-0 bg-black/50 w-full text-center">
             <h4 className="text-secondary-100 font-medium text-xl mb-2">
@@ -342,7 +336,7 @@ export default function AluminiEvents() {
           <div className="aspect-w-4 aspect-h-3">
             <img
               className="object-cover"
-              src="../images/audience-seminar-applauding-young-black-woman-lectern_625516-3573.avif"
+              src={audienceImage}
               alt="professonal"
             />
           </div>

@@ -1,3 +1,14 @@
+import {
+  sa1,
+  sa2,
+  sa3,
+  sa4,
+  designer,
+  manager,
+  developer,
+  secretary,
+} from "../../index/imports";
+
 export default function Calendar() {
   return (
     <div className="container mx-auto py-16 w-[80%]">
@@ -8,7 +19,7 @@ export default function Calendar() {
           </h4>
           <div className="pr-4 border-r border-secondary-200">
             <div className="flex justify-start space-x-4 mb-8">
-              <img className="w-36 h-28 mt-2" src="../images/sa1.png" alt="" />
+              <img className="w-36 h-28 mt-2" src={sa1} alt="" />
               <div>
                 <p className="text-secondary-100 font-light text-sm">
                   Anna B. K
@@ -22,7 +33,7 @@ export default function Calendar() {
             </div>
 
             <div className="flex justify-start space-x-4 mb-8">
-              <img className="w-36 h-28 mt-2" src="../images/sa2.png" alt="" />
+              <img className="w-36 h-28 mt-2" src={sa2} alt="" />
               <div>
                 <p className="text-secondary-100 font-light text-sm">
                   Andrews Q.
@@ -36,7 +47,7 @@ export default function Calendar() {
             </div>
 
             <div className="flex justify-start space-x-4 mb-8">
-              <img className="w-36 h-28 mt-2" src="../images/sa3.png" alt="" />
+              <img className="w-36 h-28 mt-2" src={sa3} alt="" />
               <div>
                 <p className="text-secondary-100 font-light text-sm">
                   Samuella B.
@@ -50,7 +61,7 @@ export default function Calendar() {
             </div>
 
             <div className="flex justify-start space-x-4 mb-8">
-              <img className="w-36 h-28 mt-2" src="../images/sa4.png" alt="" />
+              <img className="w-36 h-28 mt-2" src={sa4} alt="" />
               <div>
                 <p className="text-secondary-100 font-light text-sm">
                   Queen N.
@@ -79,7 +90,7 @@ export default function Calendar() {
             <div className="flex justify-start space-x-4 mb-8">
               <img
                 className="w-36 h-28 mt-2 rounded-full"
-                src="../images/manager.avif"
+                src={manager}
                 alt=""
               />
               <div>
@@ -95,7 +106,7 @@ export default function Calendar() {
             <div className="flex justify-start space-x-4 mb-8">
               <img
                 className="w-36 h-28 mt-2 rounded-full"
-                src="../images/developer.avif"
+                src={developer}
                 alt=""
               />
               <div>
@@ -113,7 +124,7 @@ export default function Calendar() {
             <div className="flex justify-start space-x-4 mb-8">
               <img
                 className="w-36 h-28 mt-2 rounded-full"
-                src="../images/secretary.avif"
+                src={secretary}
                 alt=""
               />
               <div>
@@ -131,7 +142,7 @@ export default function Calendar() {
             <div className="flex justify-start space-x-4">
               <img
                 className="w-36 h-28 mt-2 rounded-full"
-                src="../images/designer.avif"
+                src={designer}
                 alt=""
               />
               <div>

@@ -1,4 +1,4 @@
-import EventDetailsComponent from "./index";
+import { EventDetailsComponent } from "./index";
 
 export default function EventDetails() {
   return (

@@ -1,13 +1,11 @@
+import { friends } from "../../index/imports";
+
 export default function UpcomingEvents() {
   return (
     <div className="bg-secondary-300/30">
       <div className="container grid lg:grid-cols-12 py-16 mx-auto gap-8 w-[80%]">
         <div className="lg:col-span-5">
-          <img
-            className="h-[90%] w-full"
-            src="../images/happy-joyful-friends-talking-laughing_1262-21146.jpg"
-            alt=""
-          />
+          <img className="h-[90%] w-full" src={friends} alt="" />
         </div>
         <div className="lg:col-span-7 relative">
           <h3 className="text-secondary-100 text-2xl font-medium tracking-wide">
