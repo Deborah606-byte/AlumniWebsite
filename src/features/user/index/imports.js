@@ -1,5 +1,9 @@
 import AppFooter from "../../../components/ui/app-footer";
+import Modal from "../../../components/ui/modal";
 import DashboardBtn from "../../../components/buttons/dashboard-btn";
+import Form from "../../../components/form/form";
+import SubmitButton from "../../../components/buttons/submit"
+
 import {
     carousel1,
     carousel2,
@@ -19,7 +23,7 @@ import {
 } from "../../../data/images/images";
 import { getUrls } from "../../../data/constants/routes"
 
-export { AppFooter, DashboardBtn, getUrls };
+export { AppFooter, Modal, DashboardBtn, Form, SubmitButton, getUrls };
 export {
     carousel1,
     carousel2,

@@ -21,7 +21,10 @@ export default function LoginComponent() {
       <div className="mx-auto bg-secondary-300 w-full">
         <div className="flex flex-col items-start space-y-4 mt-12">
           <LoginHeader />
-          <Form onSubmit={handleSubmit}>
+          <Form
+            className="flex flex-col items-start space-y-4 max-w-xl mx-auto w-full md:w-[50%]"
+            onSubmit={handleSubmit}
+          >
             <TextInput
               iconClass="fa-solid fa-user text-primary"
               placeholder="Username"

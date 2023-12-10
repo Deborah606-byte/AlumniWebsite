@@ -1,6 +1,6 @@
 import { doctor } from "../../index/imports";
 
-export default function Header() {
+export default function Header({ openAddEvent }) {
   return (
     <header className="bg-secondary-100">
       <nav className="flex justify-between items-center container mx-auto py-2">
@@ -16,13 +16,12 @@ export default function Header() {
               <span className="absolute left-5">
                 <i className="fa-solid fa-circle-plus text-secondary-100 hover:text-hover"></i>
               </span>
-              <a
-                id="open-event-form"
+              <button
                 className="addEventButton rounded-full text-secondary-200 border-secondary-300 px-8 bg-primary py-2 hover:text-hover"
-                href=""
+                onClick={openAddEvent}
               >
                 Add Event
-              </a>
+              </button>
             </li>
             <li className="relative group">
               <div className="relative inline-block text-secondary-200 cursor-pointer">
