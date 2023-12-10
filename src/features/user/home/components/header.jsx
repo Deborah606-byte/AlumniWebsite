@@ -1,8 +1,11 @@
+import { ROUTES } from "../../index/imports";
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header>
       <nav className="flex justify-between items-center container mx-auto py-4 w-[80%]">
-        <a href="#" className="font-extrabold">
+        <a href="" className="font-extrabold">
           <h1 className="text-secondary-200 text-2xl">
             <span className="text-secondary-100 text-3xl">A</span>lumni
             <span className="text-secondary-100 text-3xl">N</span>exus
@@ -20,25 +23,28 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="/events" className="text-secondary-100 hover:text-hover">
+              <Link
+                to={ROUTES.home.events}
+                className="text-secondary-100 hover:text-hover"
+              >
                 Programs & Events
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-secondary-100 hover:text-hover"
-                href="/stories"
+                to={ROUTES.stories}
               >
                 Alumni Stories
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="text-secondary-100 hover:text-hover"
-                href="/opportunity"
+                to={ROUTES.opportunity}
               >
                 Career Opportunities
-              </a>
+              </Link>
             </li>
 
             <button
