@@ -1,6 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import { ROUTES } from "./data/constants/routes";
-import Auth from "./pages/auth";
 import AboutUs from "./pages/about-us";
 import NotFound from "./pages/not-found";
 import Login from "./pages/login";
@@ -14,19 +18,24 @@ import Stories from "./pages/stories";
 import JobDetails from "./pages/job-details";
 import RSVP from "./pages/rsvp";
 
+const ParentRoute = () => <Outlet />;
+
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path={ROUTES.base} element={<AboutUs />} />
-        <Route path={ROUTES.auth} element={<Auth />}>
-          <Route path={ROUTES.login} element={<Login />} />
-          <Route path={ROUTES.signup} element={<SignUp />} />
+        <Route path={ROUTES.root} element={<AboutUs />} />
+        <Route path={ROUTES.auth.root} element={<ParentRoute />}>
+          <Route index element={<NotFound />} />
+          <Route path={ROUTES.auth.login} element={<Login />} />
+          <Route path={ROUTES.auth.signup} element={<SignUp />} />
         </Route>
-        <Route path={ROUTES.home} element={<Home />} />
-        <Route path={ROUTES.dashboard} element={<Dashboard />} />
-        <Route path={ROUTES.events} element={<Events />} />
-        <Route path={ROUTES.eventDetails} element={<EventDetails />} />
+        <Route path={ROUTES.home.root} element={<ParentRoute />}>
+          <Route index element={<Home />} />
+          <Route path={ROUTES.home.dashboard} element={<Dashboard />} />
+          <Route path={ROUTES.home.events} element={<Events />} />
+          <Route path={ROUTES.home.eventDetails} element={<EventDetails />} />
+        </Route>
         <Route path={ROUTES.opportunity} element={<Opportunities />} />
         <Route path={ROUTES.jobDetails} element={<JobDetails />} />
         <Route path={ROUTES.stories} element={<Stories />} />
