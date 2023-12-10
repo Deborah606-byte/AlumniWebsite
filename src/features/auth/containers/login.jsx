@@ -7,11 +7,11 @@ import {
 } from "../index/imports";
 import LoginFooter from "../components/login-footer";
 import LoginHeader from "../components/login-header";
+import useLoginLogic from "../logic-hooks/login";
 
 export default function LoginComponent() {
-  const { username, password } = {};
-  const handleInputChange = (e) => console.log(e);
-  const handleFormSubmit = (e) => console.log(e);
+  const { values, handleInputChange, handleSubmit } = useLoginLogic();
+  const { username, password } = values;
 
   return (
     <div className="grid lg:grid-cols-2 container mx-auto mt-20">
@@ -21,7 +21,10 @@ export default function LoginComponent() {
       <div className="mx-auto bg-secondary-300 w-full">
         <div className="flex flex-col items-start space-y-4 mt-12">
           <LoginHeader />
-          <Form onSubmit={handleFormSubmit}>
+          <Form
+            className="flex flex-col items-start space-y-4 max-w-xl mx-auto w-full md:w-[50%]"
+            onSubmit={handleSubmit}
+          >
             <TextInput
               iconClass="fa-solid fa-user text-primary"
               placeholder="Username"
