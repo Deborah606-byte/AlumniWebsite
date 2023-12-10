@@ -7,8 +7,11 @@ import {
   SubmitButton,
   TextInput,
 } from "../index/imports";
+import useSignUpLogic from "../logic-hooks/signup";
 
 export default function SignUpComponent() {
+  const { values, handleInputChange, handleSubmit, handleSignCancel } =
+    useSignUpLogic();
   const {
     username,
     password,
@@ -18,8 +21,7 @@ export default function SignUpComponent() {
     email,
     group,
     phone,
-  } = {};
-  const handleInputChange = (e) => console.log(e);
+  } = values;
 
   return (
     <div className="grid lg:grid-cols-2 container mx-auto py-12">
@@ -29,7 +31,7 @@ export default function SignUpComponent() {
           <h2 className="text-primary mx-auto font-semibold text-xl">
             Create An Account
           </h2>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <TextInput
               iconClass="fa-solid fa-user text-primary"
               name="username"
@@ -81,12 +83,12 @@ export default function SignUpComponent() {
             <PasswordInput value={password} onChange={handleInputChange} />
 
             <div className="flex mx-auto space-x-32">
-              <a
-                className="rounded-full bg-secondary-100 text-secondary-200 px-4 py-2 hover:underline hover:text-primary"
-                href="/about"
+              <button
+                className="rounded-full bg-secondary-100 text-secondary-200 px-4 py-2 hover:text-primary"
+                onClick={handleSignCancel}
               >
                 Cancel
-              </a>
+              </button>
               <SubmitButton>Sign Up</SubmitButton>
             </div>
           </Form>
