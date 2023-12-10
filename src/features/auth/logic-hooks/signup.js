@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useFormLogic } from "../index/imports";
 
 const DEFAULT_VALUES = {
     address: "",
@@ -11,13 +11,7 @@ const DEFAULT_VALUES = {
     username: "",
 };
 export default function useSignUpLogic() {
-    const [values, setValues] = useState(DEFAULT_VALUES);
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        const updatedValues = { ...values, [name]: value };
-        return setValues(updatedValues);
-    };
+    const { values, handleInputChange } = useFormLogic(DEFAULT_VALUES);
 
     const handleSubmit = (event) => {
         event.preventDefault();

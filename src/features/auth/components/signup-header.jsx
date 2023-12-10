@@ -1,3 +1,8 @@
+import { Link } from "react-router-dom";
+import { ROUTES } from "../index/imports";
+
+const { root: auth, login } = ROUTES.auth;
+
 export default function SignUpHeader() {
   return (
     <div className="bg-secondary-100 w-full py-32 px-8">
@@ -25,12 +30,12 @@ export default function SignUpHeader() {
 
       <div className="text-center">
         <p className="text-primary text-xl">Already have an account</p>
-        <a
+        <Link
           className="text-secondary-200 hover:underline hover:text-primary"
-          href="/auth/login"
+          to={`${auth}/${login}`}
         >
           Login
-        </a>
+        </Link>
       </div>
     </div>
   );
