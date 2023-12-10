@@ -12,8 +12,9 @@ import {
   sa1,
   gathering,
 } from "../../../data/images/images";
+import { ROUTES } from "../../../data/constants/routes";
 
-export { AppFooter };
+export { AppFooter, ROUTES };
 export {
   carousel1,
   logoElectron,

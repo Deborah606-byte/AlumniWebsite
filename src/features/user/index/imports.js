@@ -1,4 +1,5 @@
 import AppFooter from "../../../components/ui/app-footer";
+import DashboardBtn from "../../../components/buttons/dashboard-btn";
 import {
     carousel1,
     carousel2,
@@ -16,9 +17,9 @@ import {
     secretary,
     doctor
 } from "../../../data/images/images";
-import { ROUTES } from "../../../data/constants/routes"
+import { getUrls } from "../../../data/constants/routes"
 
-export { AppFooter, ROUTES };
+export { AppFooter, DashboardBtn, getUrls };
 export {
     carousel1,
     carousel2,
