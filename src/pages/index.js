@@ -1,15 +1,5 @@
-export const ROUTES = {
-  base: "/",
-  auth: "/auth",
-  login: "login",
-  signup: "signup",
-  home: "/home",
-  dashboard: "/dashboard",
-  events: "/events",
-  eventDetails: "/event-details",
-  opportunity: "/oportunity",
-  stories: "/stories",
-  rsvp: '/rsvp',
-  jobDetails: '/job-details',
-  notFound: "*",
-};
+import LoginComponent from "../features/auth/containers/login";
+import SignUpComponent from "../features/auth/containers/signup";
+import AboutUsComponent from "../features/about-us/containers/about-us";
+
+export { LoginComponent, SignUpComponent, AboutUsComponent };
