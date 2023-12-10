@@ -1,6 +1,6 @@
-import { logoElectron, AppFooter } from "../index/imports";
+import { AppFooter, logoElectron } from "../index/imports";
 
-export default function Footer() {
+export default function EventFooter() {
   return (
     <div className="bg-black/50">
       <div className="container mx-auto pt-36 pb-5 w-[80%]">
@@ -63,6 +63,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
         <AppFooter />
       </div>
     </div>

@@ -1,12 +1,12 @@
-import { logoElectron, AppFooter } from "../index/imports";
+import { AppFooter } from "../../index/imports";
 
-export default function Footer() {
+export default function HomeFooter() {
   return (
     <div className="bg-black/50">
       <div className="container mx-auto pt-36 pb-5 w-[80%]">
         <div className="grid lg:grid-cols-4 gap-10 mb-36">
           <div className="mt-12">
-            <img className="" src={logoElectron} alt="" />
+            <img className="" src="../images/ion_logo-electron.png" alt="" />
           </div>
           <div>
             <a href="#" className="font-extrabold">

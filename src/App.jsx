@@ -6,13 +6,13 @@ import NotFound from "./pages/not-found";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Home from "./pages/home";
-import Dashboard from "./pages/home";
-import Events from "./pages/home";
-import EventDetails from "./pages/home";
-import Opportunities from "./pages/home";
-import Stories from "./pages/home";
-import JobDetails from "./pages/home";
-import RSVP from "./pages/home";
+import Dashboard from "./pages/dashboard";
+import Events from "./pages/events";
+import EventDetails from "./pages/event-details";
+import Opportunities from "./pages/opportunities";
+import Stories from "./pages/stories";
+import JobDetails from "./pages/job-details";
+import RSVP from "./pages/rsvp";
 
 const App = () => {
   return (
@@ -23,7 +23,6 @@ const App = () => {
           <Route path={ROUTES.login} element={<Login />} />
           <Route path={ROUTES.signup} element={<SignUp />} />
         </Route>
-        <Route path={ROUTES.notFound} element={<NotFound />} />
         <Route path={ROUTES.home} element={<Home />} />
         <Route path={ROUTES.dashboard} element={<Dashboard />} />
         <Route path={ROUTES.events} element={<Events />} />
@@ -32,6 +31,7 @@ const App = () => {
         <Route path={ROUTES.jobDetails} element={<JobDetails />} />
         <Route path={ROUTES.stories} element={<Stories />} />
         <Route path={ROUTES.rsvp} element={<RSVP />} />
+        <Route path={ROUTES.notFound} element={<NotFound />} />
       </Routes>
     </Router>
   );
