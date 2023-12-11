@@ -1,24 +1,37 @@
-import { useFormLogic } from "../index/imports";
+import { useNavigate } from "react-router-dom";
+import { ROUTES, useFormLogic, signupApiRequest } from "../index/imports";
 
 const DEFAULT_VALUES = {
-    address: "",
-    email: "",
-    firstName: "",
-    group: "",
-    lastName: "",
-    password: "",
-    phone: "",
-    username: "",
+  address: "",
+  email: "",
+  firstName: "",
+  group: "",
+  lastName: "",
+  password: "",
+  phone: "",
+  username: "",
 };
 export default function useSignUpLogic() {
-    const { values, handleInputChange } = useFormLogic(DEFAULT_VALUES);
+  const { values, handleInputChange } = useFormLogic(DEFAULT_VALUES);
+  const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log("values", values);
-    };
+  const redirectToLogin = () => {
+    const { root: auth, login } = ROUTES.auth;
+    const url = `${auth}/${login}`;
+    return navigate(url, { replace: true });
+  };
 
-    const handleSignCancel = () => console.log("canceling...")
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { error } = await signupApiRequest({ values });
 
-    return { values, handleInputChange, handleSubmit, handleSignCancel };
+    if (error) return alert(error);
+
+    alert("Account created, please login...");
+    return redirectToLogin();
+  };
+
+  const handleSignCancel = () => {};
+
+  return { values, handleInputChange, handleSubmit, handleSignCancel };
 }
