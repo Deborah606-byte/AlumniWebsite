@@ -10,8 +10,7 @@ import {
 import useSignUpLogic from "../logic-hooks/signup";
 
 export default function SignUpComponent() {
-  const { values, handleInputChange, handleSubmit, handleSignCancel } =
-    useSignUpLogic();
+  const { values, handleInputChange, handleSubmit } = useSignUpLogic();
   const {
     username,
     password,
@@ -83,12 +82,6 @@ export default function SignUpComponent() {
             <PasswordInput value={password} onChange={handleInputChange} />
 
             <div className="flex mx-auto space-x-32">
-              <button
-                className="rounded-full bg-secondary-100 text-secondary-200 px-4 py-2 hover:text-primary"
-                onClick={handleSignCancel}
-              >
-                Cancel
-              </button>
               <SubmitButton>Sign Up</SubmitButton>
             </div>
           </Form>

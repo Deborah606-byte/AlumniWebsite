@@ -1,16 +1,33 @@
-import { useFormLogic } from "../index/imports"
+import { useNavigate } from "react-router-dom";
+import {
+  ROUTES,
+  useFormLogic,
+  loginApiRequest,
+  saveUserToLocalStorage,
+} from "../index/imports";
 
 const DEFAULT_VALUES = {
-    password: "",
-    username: "",
+  password: "",
+  username: "",
 };
 export default function useLoginLogic() {
-    const { values, handleInputChange } = useFormLogic(DEFAULT_VALUES);
+  const { values, handleInputChange } = useFormLogic(DEFAULT_VALUES);
+  const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log("values", values);
-    };
+  const redirectToHome = () => {
+    const { root: home } = ROUTES.home;
+    return navigate(home, { replace: true });
+  };
 
-    return { values, handleInputChange, handleSubmit };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { error, data } = await loginApiRequest({ values });
+
+    if (error) return alert(error);
+
+    saveUserToLocalStorage(data.data);
+    return redirectToHome();
+  };
+
+  return { values, handleInputChange, handleSubmit };
 }
