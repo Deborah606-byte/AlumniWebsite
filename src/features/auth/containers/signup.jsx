@@ -8,6 +8,8 @@ import {
   TextInput,
 } from "../index/imports";
 import useSignUpLogic from "../logic-hooks/signup";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faEnvelope, faUserGroup, faPhone, faLocation } from '@fortawesome/free-solid-svg-icons'
 
 export default function SignUpComponent() {
   const { values, handleInputChange, handleSubmit } = useSignUpLogic();
@@ -30,50 +32,51 @@ export default function SignUpComponent() {
           <h2 className="text-primary mx-auto font-semibold text-xl">
             Create An Account
           </h2>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} className="mx-auto space-y-4">
             <TextInput
-              iconClass="fa-solid fa-user text-primary"
+              icon={<FontAwesomeIcon icon={faUser} className="text-primary" />}
               name="username"
               placeholder="Username Eg:janesmith"
               value={username}
               onChange={handleInputChange}
             />
             <TextInput
-              iconClass="fa-solid fa-user text-primary"
+              icon={<FontAwesomeIcon icon={faUser} className="text-primary" />}
               name="firstName"
               placeholder="First Name"
               value={firstName}
               onChange={handleInputChange}
             />
             <TextInput
-              iconClass="fa-solid fa-user text-primary"
+              icon={<FontAwesomeIcon icon={faUser} className="text-primary" />}
               name="lastName"
               placeholder="Last Name"
               value={lastName}
               onChange={handleInputChange}
             />
             <EmailInput
-              iconClass="fa-solid fa-envelope text-primary"
+              icon={<FontAwesomeIcon icon={faEnvelope} className="text-primary" />}
               name="email"
               placeholder="Email"
               value={email}
               onChange={handleInputChange}
             />
             <TextInput
-              iconClass="fa-solid fa-users text-primary"
+              icon={<FontAwesomeIcon icon={faUserGroup} className="text-primary" />}
               name="group"
               placeholder="Year Group"
               value={group}
               onChange={handleInputChange}
             />
             <NumberInput
+            icon={<FontAwesomeIcon icon={faPhone} className="text-primary" />}
               name="phone"
               placeholder="230-5908-4528"
               value={phone}
               onChange={handleInputChange}
             />
             <TextInput
-              iconClass="fa-solid fa-location-dot"
+              icon={<FontAwesomeIcon icon={faLocation} className="text-primary" />}
               name="address"
               placeholder="Address"
               value={address}

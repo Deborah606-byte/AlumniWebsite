@@ -1,6 +1,6 @@
 import { sendGetRequest, sendPostRequest } from "../libs/axios";
 
-const baseUrl = "http://localhost:8102/api/";
+const baseUrl = "http://localhost:8080/api/";
 
 export async function getApiRequest(endpoint, token = "") {
   url = baseUrl + endpoint;
