@@ -23,8 +23,8 @@ export default function DashboardComponent() {
         {isEditComponent && <UpdateEvent />}
         {isDeleteComponent && <DeleteEvent />}
       </Modal>
-      <UpdateProfile />
-      <Logout />
+      {/* <UpdateProfile /> */}
+      {/* <Logout /> */}
     </>
   );
 }
