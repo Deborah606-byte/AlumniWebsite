@@ -20,11 +20,14 @@ import {
   secretary,
   doctor,
 } from "../../../data/images/images";
+import useForm from "../../../hooks/use-form-logic";
 import { getUrls } from "../../../data/constants/routes";
 import { loadUserFromLocalStorage } from "../../../utils/local-storage";
+import { addEventApiRequest } from "../../../services/events";
 
 export { AppFooter, Modal, DashboardBtn, Form, SubmitButton, getUrls };
-export { loadUserFromLocalStorage };
+export { loadUserFromLocalStorage, useForm };
+export { addEventApiRequest };
 export {
   carousel1,
   carousel2,

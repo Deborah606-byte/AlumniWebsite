@@ -7,6 +7,7 @@ import UpdateProfile from "../../profile/containers/update-profile";
 import Logout from "../../../auth/containers/logout";
 import { Modal } from "../../index/imports";
 import useDashboardLogic, { MODAL_COMPONENTS } from "../logic-hooks/dashboard";
+import EventContextProvider from "../context/events";
 
 export default function DashboardComponent() {
   const { state, handlers } = useDashboardLogic();
@@ -16,13 +17,16 @@ export default function DashboardComponent() {
 
   return (
     <>
-      <Header openAddEvent={() => openModal(MODAL_COMPONENTS.delete)} />
-      <Events />
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {isAddComponent && <AddEvent />}
-        {isEditComponent && <UpdateEvent />}
-        {isDeleteComponent && <DeleteEvent />}
-      </Modal>
+      <Header openAddEvent={() => openModal(MODAL_COMPONENTS.add)} />
+      <EventContextProvider>
+        <Events />
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {isAddComponent && <AddEvent onClose={closeModal} />}
+          {isEditComponent && <UpdateEvent />}
+          {isDeleteComponent && <DeleteEvent />}
+        </Modal>
+      </EventContextProvider>
+
       {/* <UpdateProfile /> */}
       {/* <Logout /> */}
     </>
