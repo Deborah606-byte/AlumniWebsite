@@ -27,11 +27,18 @@ import { loadUserFromLocalStorage } from "../../../utils/local-storage";
 import {
   addEventApiRequest,
   fetchEventsApiRequest,
+  updateEventApiRequest,
+  deleteEventApiRequest,
 } from "../../../services/events";
 
 export { AppFooter, Modal, DashboardBtn, Form, SubmitButton, getUrls };
 export { loadUserFromLocalStorage, useForm };
-export { addEventApiRequest, fetchEventsApiRequest };
+export {
+  addEventApiRequest,
+  fetchEventsApiRequest,
+  updateEventApiRequest,
+  deleteEventApiRequest,
+};
 export {
   carousel1,
   carousel2,

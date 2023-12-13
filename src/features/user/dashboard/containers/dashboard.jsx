@@ -29,7 +29,7 @@ export default function DashboardComponent() {
           <UpdateEvent event={selectedEvent} onClose={closeModal} />
         )}
         {isDeleteComponent && (
-          <DeleteEvent event={selectedEvent} onClose={closeModal} />
+          <DeleteEvent eventId={selectedEvent} onClose={closeModal} />
         )}
       </Modal>
 

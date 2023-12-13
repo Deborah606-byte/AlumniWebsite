@@ -1,5 +1,7 @@
-export default function DeleteEvent({ event, onClose }) {
-  console.log({ event });
+import useDeleteEventLogic from "../logic-hooks/delete-event";
+
+export default function DeleteEvent({ eventId, onClose }) {
+  const { isLoading, handleDelete } = useDeleteEventLogic({ eventId, onClose });
 
   return (
     <div className="delete-event-modal inset-0 z-50 justify-center  bg-white p-8 rounded-lg mx-auto">
@@ -22,8 +24,11 @@ export default function DeleteEvent({ event, onClose }) {
         >
           Cancel
         </button>
-        <button className="bg-primary text-secondary-100 rounded-lg py-2 px-4 hover:text-hover">
-          Delete
+        <button
+          className="bg-primary text-secondary-100 rounded-lg py-2 px-4 hover:text-hover"
+          onClick={handleDelete}
+        >
+          {isLoading ? "Loading..." : "Delete"}
         </button>
       </div>
     </div>

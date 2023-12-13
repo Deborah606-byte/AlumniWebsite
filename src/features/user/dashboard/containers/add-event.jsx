@@ -8,13 +8,10 @@ import {
   NumberInput,
 } from "../components/form-inputs";
 import useAddEventLogic from "../logic-hooks/add-event";
-import { useEventContext } from "../context/events";
 
 export default function AddEvent({ onClose }) {
-  const { setEvents } = useEventContext();
   const { isLoading, values, handleInputChange, handleSubmit } =
     useAddEventLogic({
-      setEvents,
       closeModal: onClose,
     });
   const {
