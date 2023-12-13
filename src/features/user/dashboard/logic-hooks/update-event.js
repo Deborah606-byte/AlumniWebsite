@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm, updateEventApiRequest } from "../../index/imports";
 
-export default function usUpdateEventLogic(setup) {
+export default function useUpdateEventLogic(setup) {
   const { event, closeModal } = setup;
   const { values, handleInputChange } = useForm(getEventValues(event));
   const [isLoading, setIsLoading] = useState(false);

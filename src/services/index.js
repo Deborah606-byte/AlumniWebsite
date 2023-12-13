@@ -1,4 +1,9 @@
-import { sendGetRequest, sendPostRequest, sendPutRequest } from "../libs/axios";
+import {
+  sendGetRequest,
+  sendPostRequest,
+  sendPutRequest,
+  sendDeleteRequest,
+} from "../libs/axios";
 
 const baseUrl = "http://localhost:8102/api/";
 
@@ -32,6 +37,17 @@ export async function putApiRequest(payload) {
 
   try {
     const { data } = await sendPutRequest({ ...payload, url, token });
+    return { error: null, data };
+  } catch (err) {
+    const error = err.response?.data?.message ?? err.message;
+    return { error, data: null };
+  }
+}
+
+export async function deleteApiRequest(endpoint, token = "") {
+  const url = baseUrl + endpoint;
+  try {
+    const { data } = await sendDeleteRequest({ url, token });
     return { error: null, data };
   } catch (err) {
     const error = err.response?.data?.message ?? err.message;

@@ -14,3 +14,8 @@ export async function sendPutRequest(payload) {
   const { url, values, token } = payload;
   return await axios.put(url, values, { headers: { Authorization: token } });
 }
+
+export async function sendDeleteRequest(payload) {
+  const { url, token } = payload;
+  return await axios.delete(url, { headers: { Authorization: token } });
+}

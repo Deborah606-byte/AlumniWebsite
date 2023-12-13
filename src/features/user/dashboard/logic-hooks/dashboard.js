@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { loadUserFromLocalStorage } from "../../index/imports";
 
 export const MODAL_COMPONENTS = {
   add: "ADD_COMPONENT",
@@ -10,7 +9,6 @@ export const MODAL_COMPONENTS = {
 export default function useDashboardLogic() {
   const [modalComponent, setModalComponent] = useState("");
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const currentUser = loadUserFromLocalStorage();
 
   const isModalOpen = Boolean(modalComponent);
   const isAddComponent = modalComponent === MODAL_COMPONENTS.add;
