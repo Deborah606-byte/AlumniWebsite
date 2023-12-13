@@ -1,8 +1,7 @@
-import { getUrls, DashboardBtn } from "../../index/imports";
 import { Link } from "react-router-dom";
+import { DashboardBtn } from "../../index/imports";
 
-export default function Header() {
-  const { homeUrl, eventsUrl, storiesUrl, opportunitiesUrl } = getUrls();
+export default function Header({ links, onDashboardClick }) {
   return (
     <header>
       <nav className="flex justify-between items-center container mx-auto py-4 w-[80%]">
@@ -14,12 +13,7 @@ export default function Header() {
         </a>
         <div className="nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center">
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
-            {[
-              { name: "Home", url: homeUrl },
-              { name: "Programs & Events", url: eventsUrl },
-              { name: "Alumni Stories", url: storiesUrl },
-              { name: "Career Opportunities", url: opportunitiesUrl },
-            ].map(({ name, url }) => (
+            {links.map(({ name, url }) => (
               <li key={name}>
                 <Link
                   className="text-hover cursor-pointer"
@@ -30,7 +24,7 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            <DashboardBtn onClick={() => console.log("to dashboard")} />
+            <DashboardBtn onClick={onDashboardClick} />
           </ul>
         </div>
       </nav>

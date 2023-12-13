@@ -10,21 +10,31 @@ import useDashboardLogic, { MODAL_COMPONENTS } from "../logic-hooks/dashboard";
 
 export default function DashboardComponent() {
   const { state, handlers } = useDashboardLogic();
-  const { openModal, closeModal } = handlers;
-  const { isModalOpen, isAddComponent, isDeleteComponent, isEditComponent } =
-    state;
+  const { openModal, closeModal, setEvent } = handlers;
+  const {
+    isModalOpen,
+    isAddComponent,
+    isDeleteComponent,
+    isEditComponent,
+    selectedEvent,
+  } = state;
 
   return (
     <>
-      <Header openAddEvent={() => openModal(MODAL_COMPONENTS.delete)} />
-      <Events />
+      <Header openAddEvent={() => openModal(MODAL_COMPONENTS.add)} />
+      <Events setEvent={setEvent} />
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {isAddComponent && <AddEvent />}
-        {isEditComponent && <UpdateEvent />}
-        {isDeleteComponent && <DeleteEvent />}
+        {isAddComponent && <AddEvent onClose={closeModal} />}
+        {isEditComponent && (
+          <UpdateEvent event={selectedEvent} onClose={closeModal} />
+        )}
+        {isDeleteComponent && (
+          <DeleteEvent event={selectedEvent} onClose={closeModal} />
+        )}
       </Modal>
-      <UpdateProfile />
-      <Logout />
+
+      {/* <UpdateProfile /> */}
+      {/* <Logout /> */}
     </>
   );
 }

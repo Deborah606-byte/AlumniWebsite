@@ -3,7 +3,7 @@ import { sendGetRequest, sendPostRequest } from "../libs/axios";
 const baseUrl = "http://localhost:8080/api/";
 
 export async function getApiRequest(endpoint, token = "") {
-  url = baseUrl + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const { data } = await sendGetRequest({ url, token });
     return { error: null, data };

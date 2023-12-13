@@ -1,4 +1,6 @@
-export default function DeleteEvent() {
+export default function DeleteEvent({ event, onClose }) {
+  console.log({ event });
+
   return (
     <div className="delete-event-modal inset-0 z-50 justify-center  bg-white p-8 rounded-lg mx-auto">
       <div className="flex justify-between">
@@ -16,7 +18,7 @@ export default function DeleteEvent() {
       <div className="flex justify-between">
         <button
           className="bg-secondary-300 text-secondary-200 rounded-lg py-2 px-4 hover:text-hover"
-          // onclick="cancelEvent()"
+          onClick={onClose}
         >
           Cancel
         </button>

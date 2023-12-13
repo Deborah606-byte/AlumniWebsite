@@ -23,7 +23,7 @@ export default function UpdateProfile() {
         <div className="mb-4 flex flex-wrap -mx-2">
           <div className="w-1/2 px-2">
             <label
-              for="first-name"
+              htmlFor="first-name"
               className="block text-secondary-100 text-sm font-medium"
             >
               First Name
@@ -40,7 +40,7 @@ export default function UpdateProfile() {
 
           <div className="w-1/2 px-2">
             <label
-              for="last-name"
+              htmlFor="last-name"
               className="block text-secondary-100 text-sm font-medium"
             >
               Last Name
@@ -60,7 +60,7 @@ export default function UpdateProfile() {
         <div className="mb-4 flex flex-wrap -mx-2">
           <div className="w-1/2 px-2">
             <label
-              for="username"
+              htmlFor="username"
               className="block text-secondary-100 text-sm font-medium"
             >
               Username
@@ -76,7 +76,7 @@ export default function UpdateProfile() {
 
           <div className="w-1/2 px-2">
             <label
-              for="email"
+              htmlFor="email"
               className="block text-secondary-100 text-sm font-medium"
             >
               Email
@@ -96,7 +96,7 @@ export default function UpdateProfile() {
         <div className="mb-4 flex flex-wrap -mx-2">
           <div className="w-1/2 px-2">
             <label
-              for="group"
+              htmlFor="group"
               className="block text-secondary-100 text-sm font-medium"
             >
               Year Group
@@ -111,7 +111,7 @@ export default function UpdateProfile() {
           </div>
           <div className="w-1/2 px-2">
             <label
-              for="tel"
+              htmlFor="tel"
               className="block text-secondary-100 text-sm font-medium"
             >
               Telephone
@@ -128,7 +128,10 @@ export default function UpdateProfile() {
         </div>
 
         {/* <!--  profile photo--> */}
-        <label for="photo" className="block text-sm font-medium text-primary">
+        <label
+          htmlFor="photo"
+          className="block text-sm font-medium text-primary"
+        >
           Photo
         </label>
         <div className="flex items-center gap-x-3">
@@ -153,7 +156,7 @@ export default function UpdateProfile() {
         </div>
 
         <label
-          for="cover-photo"
+          htmlFor="cover-photo"
           className="block text-sm font-medium leading-6 text-primary"
         >
           Cover photo
@@ -174,7 +177,7 @@ export default function UpdateProfile() {
             </svg>
             <div className="mt-4 flex text-sm text-gray-600">
               <label
-                for="file-upload"
+                htmlFor="file-upload"
                 className="relative cursor-pointer rounded-md bg-white font-semibold text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-hover px-6"
               >
                 <span>Upload a file</span>

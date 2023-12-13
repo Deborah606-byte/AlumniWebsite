@@ -3,7 +3,7 @@ export function SelectInput(props) {
   return (
     <div className="w-1/2 px-2">
       <label
-        for={name}
+        htmlFor={name}
         className="block text-secondary-100 text-sm font-medium"
       >
         {label}
@@ -25,7 +25,7 @@ export function SelectInput(props) {
 }
 
 export function TextInput(props) {
-  const { label, name, value, onChange, aux } = props;
+  const { label, name, value, onChange, aux, aux_value } = props;
   return (
     <div className="w-1/2 px-2">
       <label
@@ -45,10 +45,12 @@ export function TextInput(props) {
       />
       {!!aux ? (
         <input
+          className="w-full p-2 rounded-lg border-gray-500 border-2 placeholder:text-secondary-200/50"
           type="text"
           id="events"
           name={`${name}_aux`}
-          className="w-full p-2 rounded-lg border-gray-500 border-2 placeholder:text-secondary-200/50"
+          value={aux_value}
+          onChange={onChange}
           required
         />
       ) : null}

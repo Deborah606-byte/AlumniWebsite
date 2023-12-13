@@ -8,7 +8,9 @@ import {
   NumberInput,
 } from "../components/form-inputs";
 
-export default function UpdateEvent() {
+export default function UpdateEvent({ event, onClose }) {
+  console.log({ event });
+
   return (
     <div className="fixed inset-0 z-50 items-center justify-center mt-4">
       <Form className="bg-white p-8 rounded-lg shadow-2xl max-w-2xl mx-auto">
@@ -66,7 +68,7 @@ export default function UpdateEvent() {
         <div className="flex justify-between">
           <button
             className="bg-secondary-300 text-secondary-200 rounded-lg py-2 px-4 hover:text-hover"
-            // onclick="cancelEvent()"
+            onClick={onClose}
           >
             Cancel
           </button>
