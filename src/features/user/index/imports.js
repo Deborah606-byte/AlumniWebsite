@@ -19,15 +19,19 @@ import {
   developer,
   secretary,
   doctor,
+  audienceImage,
 } from "../../../data/images/images";
 import useForm from "../../../hooks/use-form-logic";
 import { getUrls } from "../../../data/constants/routes";
 import { loadUserFromLocalStorage } from "../../../utils/local-storage";
-import { addEventApiRequest } from "../../../services/events";
+import {
+  addEventApiRequest,
+  fetchEventsApiRequest,
+} from "../../../services/events";
 
 export { AppFooter, Modal, DashboardBtn, Form, SubmitButton, getUrls };
 export { loadUserFromLocalStorage, useForm };
-export { addEventApiRequest };
+export { addEventApiRequest, fetchEventsApiRequest };
 export {
   carousel1,
   carousel2,
@@ -44,4 +48,5 @@ export {
   developer,
   secretary,
   doctor,
+  audienceImage,
 };

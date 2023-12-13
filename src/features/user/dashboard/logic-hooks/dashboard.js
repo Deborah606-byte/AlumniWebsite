@@ -9,6 +9,7 @@ export const MODAL_COMPONENTS = {
 
 export default function useDashboardLogic() {
   const [modalComponent, setModalComponent] = useState("");
+  const [selectedEvent, setSelectedEvent] = useState(null);
   const currentUser = loadUserFromLocalStorage();
 
   console.log({ currentUser });
@@ -21,8 +22,24 @@ export default function useDashboardLogic() {
   const openModal = (component) => setModalComponent(component);
   const closeModal = () => setModalComponent("");
 
+  const setEvent = (event) => {
+    const component =
+      typeof event === "string"
+        ? MODAL_COMPONENTS.delete
+        : MODAL_COMPONENTS.edit;
+
+    setSelectedEvent(event);
+    return openModal(component);
+  };
+
   return {
-    state: { isModalOpen, isAddComponent, isEditComponent, isDeleteComponent },
-    handlers: { openModal, closeModal },
+    state: {
+      selectedEvent,
+      isModalOpen,
+      isAddComponent,
+      isEditComponent,
+      isDeleteComponent,
+    },
+    handlers: { openModal, closeModal, setEvent },
   };
 }

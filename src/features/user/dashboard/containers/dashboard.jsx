@@ -7,25 +7,31 @@ import UpdateProfile from "../../profile/containers/update-profile";
 import Logout from "../../../auth/containers/logout";
 import { Modal } from "../../index/imports";
 import useDashboardLogic, { MODAL_COMPONENTS } from "../logic-hooks/dashboard";
-import EventContextProvider from "../context/events";
 
 export default function DashboardComponent() {
   const { state, handlers } = useDashboardLogic();
-  const { openModal, closeModal } = handlers;
-  const { isModalOpen, isAddComponent, isDeleteComponent, isEditComponent } =
-    state;
+  const { openModal, closeModal, setEvent } = handlers;
+  const {
+    isModalOpen,
+    isAddComponent,
+    isDeleteComponent,
+    isEditComponent,
+    selectedEvent,
+  } = state;
 
   return (
     <>
       <Header openAddEvent={() => openModal(MODAL_COMPONENTS.add)} />
-      <EventContextProvider>
-        <Events />
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          {isAddComponent && <AddEvent onClose={closeModal} />}
-          {isEditComponent && <UpdateEvent />}
-          {isDeleteComponent && <DeleteEvent />}
-        </Modal>
-      </EventContextProvider>
+      <Events setEvent={setEvent} />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {isAddComponent && <AddEvent onClose={closeModal} />}
+        {isEditComponent && (
+          <UpdateEvent event={selectedEvent} onClose={closeModal} />
+        )}
+        {isDeleteComponent && (
+          <DeleteEvent event={selectedEvent} onClose={closeModal} />
+        )}
+      </Modal>
 
       {/* <UpdateProfile /> */}
       {/* <Logout /> */}
