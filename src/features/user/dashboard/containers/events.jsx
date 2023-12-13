@@ -44,7 +44,7 @@ export default function Events({ setEvent }) {
                 </p>
                 <div className="relative">
                   <span className="absolute">
-                    <i class="fa-regular fa-clock text-primary"></i>
+                    <i className="fa-regular fa-clock text-primary"></i>
                   </span>
                   <p className="pl-6 text-secondary-200 font-semibold text-">
                     {event.eventTime}
@@ -55,7 +55,7 @@ export default function Events({ setEvent }) {
             <div className="absolute top-2 right-5">
               <span className="dropdown-toggle cursor-pointer">
                 <i
-                  class="fa-solid fa-ellipsis-vertical text-primary"
+                  className="fa-solid fa-ellipsis-vertical text-primary"
                   onClick={() => toggleDropDown(event._id)}
                 >
                   """

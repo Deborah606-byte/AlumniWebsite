@@ -1,5 +1,5 @@
 export function SelectInput(props) {
-  const { label, name, options, onChange } = props;
+  const { label, name, options, onChange, defaultValue } = props;
   return (
     <div className="w-1/2 px-2">
       <label
@@ -13,6 +13,7 @@ export function SelectInput(props) {
         name={name}
         className="w-full p-2 rounded-lg border-gray-500 border-2"
         onChange={onChange}
+        defaultValue={defaultValue ?? options[0].value}
       >
         {options.map(({ name, value }) => (
           <option key={name} value={value}>

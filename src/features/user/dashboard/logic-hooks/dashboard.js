@@ -12,8 +12,6 @@ export default function useDashboardLogic() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const currentUser = loadUserFromLocalStorage();
 
-  console.log({ currentUser });
-
   const isModalOpen = Boolean(modalComponent);
   const isAddComponent = modalComponent === MODAL_COMPONENTS.add;
   const isEditComponent = modalComponent === MODAL_COMPONENTS.edit;
